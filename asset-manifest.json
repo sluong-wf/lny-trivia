@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/lny-trivia/static/css/main.c8a2fa1f.css",
+    "main.js": "/lny-trivia/static/js/main.985a264c.js",
+    "index.html": "/lny-trivia/index.html",
+    "main.c8a2fa1f.css.map": "/lny-trivia/static/css/main.c8a2fa1f.css.map",
+    "main.985a264c.js.map": "/lny-trivia/static/js/main.985a264c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c8a2fa1f.css",
+    "static/js/main.985a264c.js"
+  ]
+}
