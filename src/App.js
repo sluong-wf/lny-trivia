@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import HomePage from "./pages/HomePage";
+import QuestionPage from "./pages/QuestionPage";
 
-function App() {
+const App = () => {
+  const [groupId, setGroupId] = useState(null);
+  const [questionCode, setQuestionCode] = useState(null);
+
+  const handleSubmit = (id, code) => {
+    setGroupId(id);
+    setQuestionCode(code);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ backgroundColor: "#D32F2F", height: "100vh" }}>
+      {!groupId ? (
+        <HomePage onSubmit={handleSubmit} />
+      ) : (
+        <QuestionPage groupId={groupId} questionCode={questionCode} />
+      )}
     </div>
   );
-}
+};
 
 export default App;
