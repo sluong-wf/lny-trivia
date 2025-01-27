@@ -1,24 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import QuestionPage from "./pages/QuestionPage";
 
 const App = () => {
-  const [groupId, setGroupId] = useState(null);
-  const [questionCode, setQuestionCode] = useState(null);
-
-  const handleSubmit = (id, code) => {
-    setGroupId(id);
-    setQuestionCode(code);
-  };
-
   return (
-    <div style={{ backgroundColor: "#D32F2F", height: "100vh" }}>
-      {!groupId ? (
-        <HomePage onSubmit={handleSubmit} />
-      ) : (
-        <QuestionPage groupId={groupId} questionCode={questionCode} />
-      )}
-    </div>
+    <Router>
+      <Routes>
+        {/* Route for Lunar New Year Trivia */}
+        <Route path="/lny-trivia" element={<HomePage />} />
+
+        {/* Redirect any unmatched routes to /lny-trivia */}
+        <Route path="*" element={<Navigate to="/lny-trivia" replace />} />
+      </Routes>
+    </Router>
   );
 };
 
